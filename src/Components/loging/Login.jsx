@@ -4,8 +4,8 @@ import InputPassword from "../InputComponent/InputPassword";
 import Button from "../InputComponent/Button";
 import Encryption from "../../utils/Encryption";
 import CryptoJS from "crypto-js";
-// import { useNavigate } from "react-router-dom";
-import LoginProtal from "./LoginProtal";
+import { useNavigate } from "react-router-dom";
+// import LoginProtal from "./LoginProtal";
 
 function Login(userInfo) {
   const [userName, setUserName] = useState("");
@@ -14,8 +14,8 @@ function Login(userInfo) {
   const [errorMessage, setErrorMessage] = useState("");
   const [ErrorMessageFont, setErrorMessageFont] = useState("");
   const [ErrorPassFont, setErrorPassFont] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-  // const navigate = useNavigate();
+  
+  const navigate = useNavigate();
 
   const emailHandler = (event) => {
     setUserName(event.target.value);
@@ -93,13 +93,14 @@ function Login(userInfo) {
         } else {
           //   console.log("faild");
           setErrorMessage(data.Message);
+          navigate("user");
         }
         console.log(OutputMessage);
       });
   };
 
   return (
-    <LoginProtal open={isOpen} onClose={() => setIsOpen(false)}>
+    <>
       <div>
         <section class="text-gray-600 body-font">
           <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
@@ -121,7 +122,7 @@ function Login(userInfo) {
           </div>
         </section>
       </div>
-    </LoginProtal>
+    </>
   );
 }
 

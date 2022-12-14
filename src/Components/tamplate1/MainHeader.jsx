@@ -4,6 +4,8 @@ import LoginProtal from "../loging/LoginProtal";
 import Login from "../loging/Login";
 
 function MainHeader() {
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <ul>
@@ -17,11 +19,10 @@ function MainHeader() {
           <Link to="/contact">Contact</Link>
         </li>
         <li>
-          <Link to="/login">
-            <Login />
-          </Link>
+          <button onClick={()=> setIsOpen(true)} >Login</button>
         </li>
       </ul>
+      <LoginProtal open={isOpen} onClose={()=>setIsOpen(false)}><Login></Login></LoginProtal>
     </div>
   );
 }
