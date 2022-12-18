@@ -14,7 +14,7 @@ function Login(userInfo) {
   const [errorMessage, setErrorMessage] = useState("");
   const [ErrorMessageFont, setErrorMessageFont] = useState("");
   const [ErrorPassFont, setErrorPassFont] = useState("");
-  
+
   const navigate = useNavigate();
 
   const emailHandler = (event) => {
@@ -89,11 +89,11 @@ function Login(userInfo) {
           localStorage.setItem("userinfo", JSON.stringify(userInfoObject));
           //   console.log("sucess");
           setOutputMessage(userInfoObject);
-          // navigate("user");
+          navigate("user");
         } else {
           //   console.log("faild");
           setErrorMessage(data.Message);
-          navigate("user");
+          // navigate("404");
         }
         console.log(OutputMessage);
       });

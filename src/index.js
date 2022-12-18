@@ -10,7 +10,6 @@ import Contact from "./Components/contact";
 import AboutDetails from "./Components/AboutDetails";
 import User from "./Components/tamplate2/User";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -22,7 +21,7 @@ root.render(
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Welcome />} />
         <Route path="/login" element={<Welcome />} />
-        <Route path="/user" element={<User/>} />
+        <Route path="/user" element={<User />} />
         <Route path="/about-details/:aboutDetail" element={<AboutDetails />} />
       </Routes>
     </BrowserRouter>

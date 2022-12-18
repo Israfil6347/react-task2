@@ -4,8 +4,14 @@ import LoginProtal from "../loging/LoginProtal";
 import Login from "../loging/Login";
 
 function MainHeader() {
-
   const [isOpen, setIsOpen] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // const storedUserLoggedInInfo = localStorage.getItem(userinfo);
+
+  // if (storedUserLoggedInInfo !== "") {
+  //   setIsLoggedIn(true);
+  // }
   return (
     <div>
       <ul>
@@ -19,10 +25,12 @@ function MainHeader() {
           <Link to="/contact">Contact</Link>
         </li>
         <li>
-          <button onClick={()=> setIsOpen(true)} >Login</button>
+          <button onClick={() => setIsOpen(true)}>Login</button>
         </li>
       </ul>
-      <LoginProtal open={isOpen} onClose={()=>setIsOpen(false)}><Login></Login></LoginProtal>
+      <LoginProtal open={isOpen} onClose={() => setIsOpen(false)}>
+        <Login></Login>
+      </LoginProtal>
     </div>
   );
 }

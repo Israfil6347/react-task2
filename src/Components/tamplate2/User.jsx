@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import TestContext from "../store/test-context";
 
 function User() {
   return (
-    <div>User</div>
-  )
+    <>
+      <p></p>{" "}
+    </>
+  );
 }
 
-export default User
+export default User;
